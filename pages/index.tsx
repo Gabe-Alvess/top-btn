@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   return (
     <div ref={scrollRef} className="wrapper">
       <Head>
-        <title>TOP BTN TS</title>
+        <title>TOP BTN</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
