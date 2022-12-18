@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import { useRef } from "react";
 import { AboutPage, ContactPage, HomePage, ProjectsPage, Header, TopButton } from "../components";
+import type { NextPage } from "next";
+import { useRef } from "react";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   const scrollRef: any = useRef();
