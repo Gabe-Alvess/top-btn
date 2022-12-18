@@ -13,9 +13,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header forwardedRef={scrollRef} />
+      <Header scrollRef={scrollRef} />
 
-      <HomePage forwardedRef={scrollRef} />
+      <HomePage scrollRef={scrollRef} />
 
       <AboutPage />
 
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
 
       <ContactPage />
 
-      <TopButton forwardedRef={scrollRef} />
+      <TopButton scrollRef={scrollRef} />
     </div>
   );
 };

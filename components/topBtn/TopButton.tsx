@@ -2,26 +2,26 @@ import { ArrowSmallUpIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useState } from "react";
 
 type Props = {
-  forwardedRef: any;
+  scrollRef: any;
 };
 
-export const TopButton = ({ forwardedRef }: Props) => {
+export const TopButton = ({ scrollRef }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (forwardedRef.current.scrollTop > 900) {
+      if (scrollRef.current.scrollTop > 900) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
     };
 
-    forwardedRef.current.addEventListener("scroll", toggleVisibility);
-  }, [forwardedRef]);
+    scrollRef.current.addEventListener("scroll", toggleVisibility);
+  }, [scrollRef]);
 
   const scrollToTop = () => {
-    forwardedRef.current.scrollTo({
+    scrollRef.current.scrollTo({
       top: 0,
       behavior: "smooth",
     });

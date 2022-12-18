@@ -1,33 +1,33 @@
 import React from "react";
 
 type Props = {
-  forwardedRef: any;
+  scrollRef: any;
 };
 
-export const Header = ({ forwardedRef }: Props) => {
+export const Header = ({ scrollRef }: Props) => {
   const scrollToTop = () => {
-    forwardedRef.current.scrollTo({
+    scrollRef.current.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
 
   const scrollToAbout = () => {
-    forwardedRef.current.scrollTo({
+    scrollRef.current.scrollTo({
       top: 929,
       behavior: "smooth",
     });
   };
 
   const scrollToProjects = () => {
-    forwardedRef.current.scrollTo({
-      top: 1857,
+    scrollRef.current.scrollTo({
+      top: 1858,
       behavior: "smooth",
     });
   };
 
   const scrollToContact = () => {
-    forwardedRef.current.scrollTo({
+    scrollRef.current.scrollTo({
       top: 2787,
       behavior: "smooth",
     });

@@ -13,7 +13,7 @@
   }
 
   .topBtn {
-    @apply rounded-full shadow-sm p-3 text-amber-400 bg-black transition-all duration-500 hover:bg-green-500 hover:text-black hover:ring-2 ring-white
+    @apply rounded-full shadow-sm p-3 text-amber-400 bg-black transition-all duration-500 hover:bg-green-500 hover:text-black hover:ring-2 ring-white;
   }
   .wrapper {
     @apply h-screen snap-y snap-mandatory scrollbar scrollbar-track-gray-800 scrollbar-thumb-amber-400 hover:scrollbar-thumb-amber-300;

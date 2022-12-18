@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 
 type Props = {
-  forwardedRef: any;
+  scrollRef: any;
 };
 
-export const HomePage = ({ forwardedRef }: Props) => {
+export const HomePage = ({ scrollRef }: Props) => {
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
     const pageHeight = () => {
-      const scroll = forwardedRef.current.scrollTop;
+      const scroll = scrollRef.current.scrollTop;
       setHeight(scroll);
     };
 
-    forwardedRef.current.addEventListener("scroll", pageHeight);
-  }, [forwardedRef]);
+    scrollRef.current.addEventListener("scroll", pageHeight);
+  }, [scrollRef]);
 
   return (
     <section className="snap-start" id="home">
