@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
 import { ArrowSmallUpIcon } from "@heroicons/react/24/outline";
+import React, { useEffect, useState } from "react";
 
 type Props = {
   forwardedRef: any;
@@ -8,13 +8,17 @@ type Props = {
 export const TopButton = ({ forwardedRef }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const toggleVisibility = () => {
-    if (forwardedRef.current.scrollTop > 900) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (forwardedRef.current.scrollTop > 900) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    forwardedRef.current.addEventListener("scroll", toggleVisibility);
+  }, [forwardedRef]);
 
   const scrollToTop = () => {
     forwardedRef.current.scrollTo({
@@ -22,13 +26,6 @@ export const TopButton = ({ forwardedRef }: Props) => {
       behavior: "smooth",
     });
   };
-
-  useEffect(() => {
-    forwardedRef.current.addEventListener("scroll", toggleVisibility);
-    return () => {
-      forwardedRef.current.removeEventListener("scroll", toggleVisibility);
-    };
-  }, []);
 
   return (
     <div className="fixed bottom-2 w-full flex justify-center">

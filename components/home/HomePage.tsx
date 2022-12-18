@@ -7,17 +7,14 @@ type Props = {
 export const HomePage = ({ forwardedRef }: Props) => {
   const [height, setHeight] = useState(0);
 
-  const pageHeight = () => {
-    const scroll = forwardedRef.current.scrollTop;
-    setHeight(scroll);
-  };
-
   useEffect(() => {
-    forwardedRef.current.addEventListener("scroll", pageHeight);
-    return () => {
-      forwardedRef.current.removeEventListener("scroll", pageHeight);
+    const pageHeight = () => {
+      const scroll = forwardedRef.current.scrollTop;
+      setHeight(scroll);
     };
-  }, []);
+
+    forwardedRef.current.addEventListener("scroll", pageHeight);
+  }, [forwardedRef]);
 
   return (
     <section className="snap-start" id="home">
